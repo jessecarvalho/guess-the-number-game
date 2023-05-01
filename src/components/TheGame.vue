@@ -19,7 +19,7 @@
 
                             <div class="result">
                                 <h3></h3>
-                                <img src="" alt="">
+                                <img :src="gif" alt="">
                             </div>
 
                             <div class="screen-game">
@@ -161,6 +161,27 @@
 
 <script>
 
+    import won1 from "../assets/imgs/won-1.gif";
+    import won2 from "../assets/imgs/won-2.gif";
+    import won3 from "../assets/imgs/won-3.gif";
+    import won4 from "../assets/imgs/won-4.gif";
+    import won5 from "../assets/imgs/won-5.gif";
+    import won6 from "../assets/imgs/won-6.gif";
+    import won7 from "../assets/imgs/won-7.gif";
+    import won8 from "../assets/imgs/won-8.gif";
+    import won9 from "../assets/imgs/won-9.gif";
+    import won10 from "../assets/imgs/won-10.gif";
+    import lose1 from "../assets/imgs/lose-1.gif";
+    import lose2 from "../assets/imgs/lose-2.gif";
+    import lose3 from "../assets/imgs/lose-3.gif";
+    import lose4 from "../assets/imgs/lose-4.gif";
+    import lose5 from "../assets/imgs/lose-5.gif";
+    import lose6 from "../assets/imgs/lose-6.gif";
+    import lose7 from "../assets/imgs/lose-7.gif";
+    import lose8 from "../assets/imgs/lose-8.gif";
+    import lose9 from "../assets/imgs/lose-9.gif";
+    import lose10 from "../assets/imgs/lose-10.gif";
+
     export default {
         methods: {
             keyPress(key) {
@@ -236,10 +257,10 @@
 
                 if(result == 0) {
                     resultEl.querySelector(':scope > h3').innerHTML = "Yeaa you nailed this game";
-                    resultEl.querySelector(':scope > img').setAttribute('src', './src/assets/imgs/won-' + gifNumber + '.gif');
+                    this.gif = this.gifs[gifNumber];
                 } else {
                     resultEl.querySelector(':scope > h3').innerHTML = "Omg you lose it";
-                    resultEl.querySelector(':scope > img').setAttribute('src', './src/assets/imgs/lose-' + gifNumber + '.gif');
+                    this.gif = this.gifs[gifNumber];
                 }
             },
             playAgain() {
@@ -267,9 +288,31 @@
         },
         data() {
             return {
+                gifs: [won1, won2, won3, won4, won5, won6, won7, won8, won9, won10, lose1, lose2, lose3, lose4, lose5, lose6, lose7, lose8, lose9, lose10],
                 current : 0,
                 drawnNumber : 0,
                 attempts : 0,
+                gif: '',
+                won1: won1,
+                won2: won2,
+                won3: won3,
+                won4: won4,
+                won5: won5,
+                won6: won6,
+                won7: won7,
+                won8: won8,
+                won9: won9,
+                won10: won10,
+                lose1: lose1,
+                lose2: lose2,
+                lose3: lose3,
+                lose4: lose4,
+                lose5: lose5,
+                lose6: lose6,
+                lose7: lose7,
+                lose8: lose8,
+                lose9: lose9,
+                lose10: lose10
             }
         },
     }
